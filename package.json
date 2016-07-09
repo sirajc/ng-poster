@@ -1,6 +1,7 @@
 {
   "name": "ng-poster",
   "version": "0.0.0",
+  "description": "An Angular 2 webapp to list upcoming movies and maintain a watchlist, powered by TMDb",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -11,6 +12,21 @@
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirajc/ng-poster.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular-cli",
+    "tmdb"
+  ],
+  "author": "Sirajuddin Choudhary <sirajuddin.c@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/sirajc/ng-poster/issues"
+  },
+  "homepage": "https://github.com/sirajc/ng-poster",
   "private": true,
   "dependencies": {
     "@angular/common": "2.0.0-rc.3",
