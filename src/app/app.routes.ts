@@ -1,8 +1,24 @@
 import { provideRouter, RouterConfig, Route } from '@angular/router';
 import { HomeComponent } from './home';
+import { TopRatedComponent } from './section/top-rated';
+import { UpcomingComponent } from './section/upcoming';
+import { WatchlistComponent } from './section/watchlist';
+import { SearchResultComponent } from './section/search-result';
+import { MovieDetailComponent } from './section/movie-detail';
 
 export const APP_ROUTES: RouterConfig = [
-  { path: '', component: HomeComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    children : [
+      { path: '', pathMatch: 'full' },
+      { path: 'top_rated', component: TopRatedComponent },
+      { path: 'upcoming', component: UpcomingComponent },
+      { path: 'watchlist', component: WatchlistComponent },
+      { path: 'search', component: SearchResultComponent },
+      { path: 'movie', component: MovieDetailComponent }
+    ]
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

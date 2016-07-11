@@ -5,13 +5,13 @@
       <div class="navbar-header"><button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse"
           type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         <a
-          class="navbar-brand" href="/">Poster</a>
+          class="navbar-brand" [routerLink]="['/']">Poster</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#top_rated">Top 20</a></li>
-          <li><a href="#upcoming">Upcoming Movies</a></li>
-          <li><a href="#watchlist">Watchlist</a></li>
+          <li><a [routerLink]="['/top_rated']" routerLinkActive="active" >Top 20</a></li>
+          <li><a [routerLink]="['/upcoming']"  routerLinkActive="active" >Upcoming Movies</a></li>
+          <li><a [routerLink]="['/watchlist']" routerLinkActive="active" >Watchlist</a></li>
         </ul>
       </div>
     </div>

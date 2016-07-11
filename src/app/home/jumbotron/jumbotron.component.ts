@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JumbotronComponent implements OnInit {
 
-  constructor() {}
+  constructor(private rotuer: Router) {}
 
   ngOnInit() {
+  }
+
+  search(searchText) {
+    this.rotuer.navigate(['/search'], { queryParams: { query: searchText } })
   }
 
 }
