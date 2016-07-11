@@ -17,6 +17,13 @@ module.exports = function(defaults) {
       'reflect-metadata/**/*.+(ts|js|js.map)',
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)'
+    ],
+    polyfills: [
+      'vendor/core-js/build/index.js',
+      'vendor/ie-shim/dist/browser.js',
+      'vendor/reflect-metadata/Reflect.js',
+      'vendor/systemjs/dist/system.src.js',
+      'vendor/zone.js/dist/zone.js'
     ]
   });
 };
