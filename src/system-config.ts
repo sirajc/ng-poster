@@ -38,6 +38,15 @@ const barrels: string[] = [
   'app/home/footer',
   'app/home/header',
   'app/home/jumbotron',
+  'app/section/shared',
+  'app/section/search-result',
+  'app/section/shared/movie-card',
+  'app/section/shared/movie-card-list',
+  'app/section/shared/search-box',
+  'app/section/movie-detail',
+  'app/section/top-rated',
+  'app/section/upcoming',
+  'app/section/watchlist',
   /** @cli-barrel */
 ];
 
