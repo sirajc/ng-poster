@@ -37,6 +37,7 @@ const barrels: string[] = [
   'app/home',
   'app/home/footer',
   'app/home/header',
+  'app/home/jumbotron',
   /** @cli-barrel */
 ];
 

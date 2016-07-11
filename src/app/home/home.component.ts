@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from './footer';
 import { HeaderComponent } from './header';
+import { JumbotronComponent } from './jumbotron';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { HeaderComponent } from './header';
   selector: 'pstr-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
-  directives: [ FooterComponent, HeaderComponent ]
+  directives: [ FooterComponent, HeaderComponent, JumbotronComponent ]
 })
 export class HomeComponent implements OnInit {
 
