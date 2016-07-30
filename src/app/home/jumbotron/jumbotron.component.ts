@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppStateService,  AppStateSubject } from '../../shared';
 
 @Component({
-  moduleId: module.id,
   selector: 'pstr-jumbotron',
   templateUrl: 'jumbotron.component.html',
-  styleUrls: ['jumbotron.component.css']
+  styleUrls: ['jumbotron.component.scss']
 })
 export class JumbotronComponent implements OnInit {
 
-  constructor(private rotuer: Router) {}
+  behavior: AppStateSubject;
+  constructor(private rotuer: Router, private state: AppStateService) {}
 
   ngOnInit() {
+    this.behavior = this.state.getAppState();
   }
 
   search(searchText) {

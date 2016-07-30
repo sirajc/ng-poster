@@ -1,3 +1,35 @@
-<p>
-  movie-card works!
-</p>
+<div class="movie-item">
+  <div class="movie-banner">
+    <div class="movie-backdrop">
+      <img *ngIf="movie.backdrop_path?.small" [src]="movie.backdrop_path.small"/>
+    </div>
+    <a [routerLink]="['/movie']">
+      <img class="movie-poster" [src]="movie.poster_path.smaller || noPosterImage"/>
+    </a>
+    <a [routerLink]="['/movie']" class="rating hint--top" [attr.aria-label]="movie.vote_count + ' Votes'">
+    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    <span class="rate-value" aria-label="Rating">{{movie.vote_average}}</span>
+    </a>
+  </div>
+  <div class="movie-meta">
+    <a [routerLink]="['/movie']" class="title">
+    <!--<h4 class={ "title-text " + (titleLength> 33 ? "hint--bottom" : "")} aria-label={movie.title} > {truncatedTitle}
+    </h4>-->
+    <h4 class="title-text" [attr.aria-label]="movie.title"> {{movie.original_title}}
+    </h4>
+    </a>
+    <div class="release-date text-muted">
+      <!--TODO Date string-->
+      <span class="glyphicon glyphicon-calendar"></span> {{movie.release_date}}
+    </div>
+    <hr/>
+    <p class="overview">{{movie.overview}}</p>
+    <div class="card-actions"><span class="action-button hint--bottom hidden" aria-label="Add to watchlist"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></span>
+      <span class="action-button hint--bottom hidden" aria-label="Added to watchlist"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>
+      <span
+        class="action-button hint--bottom " aria-label="Remove from watchlist"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>
+        <a class="more-info" [routerLink]="['/movie']"><span>Explore</span>
+        <em>❯</em></a>
+    </div>
+  </div>
+</div>

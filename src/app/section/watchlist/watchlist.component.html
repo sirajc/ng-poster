@@ -1,3 +1,6 @@
-<p>
-  watchlist works!
-</p>
+<div class="container watchlist-section">
+  <div class="loading-message hidden"><img src="assets/images/hourglass.svg">
+    <h5 class="text-muted">Loading your watchlist...</h5>
+  </div>
+  <pstr-movie-card-list [movies]="movies"></pstr-movie-card-list>
+</div>

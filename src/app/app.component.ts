@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { AppStateService } from './shared';
 
 @Component({
-  moduleId: module.id,
   selector: 'pstr-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
-  directives: [ ROUTER_DIRECTIVES ]
+  styleUrls: ['app.component.scss'],
+  directives: [ ROUTER_DIRECTIVES ],
+  encapsulation: ViewEncapsulation.None,
+  providers: [ AppStateService ]
 })
 export class AppComponent {
-  title = 'app works!';
+
 }

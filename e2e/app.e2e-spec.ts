@@ -1,14 +1,14 @@
-import { NgPosterPage } from './app.po';
+import { NgCliWebpackPage } from './app.po';
 
-describe('ng-poster App', function() {
-  let page: NgPosterPage;
+describe('ng-cli-webpack App', function() {
+  let page: NgCliWebpackPage;
 
   beforeEach(() => {
-    page = new NgPosterPage();
+    page = new NgCliWebpackPage();
   });
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('pstr works!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

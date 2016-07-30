@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   moduleId: module.id,
   selector: 'pstr-search-box',
   templateUrl: 'search-box.component.html',
-  styleUrls: ['search-box.component.css']
+  styleUrls: ['search-box.component.scss']
 })
 export class SearchBoxComponent implements OnInit {
 

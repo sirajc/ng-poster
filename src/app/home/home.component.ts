@@ -7,10 +7,9 @@ import { JumbotronComponent } from './jumbotron';
 
 
 @Component({
-  moduleId: module.id,
   selector: 'pstr-home',
   templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css'],
+  styleUrls: ['home.component.scss'],
   directives: [ FooterComponent, HeaderComponent, JumbotronComponent, ROUTER_DIRECTIVES ]
 })
 export class HomeComponent implements OnInit {

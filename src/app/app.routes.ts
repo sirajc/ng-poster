@@ -1,4 +1,5 @@
-import { provideRouter, RouterConfig, Route } from '@angular/router';
+import { provide, PLATFORM_DIRECTIVES } from '@angular/core';
+import { provideRouter, RouterConfig, Route, ROUTER_DIRECTIVES } from '@angular/router';
 import { HomeComponent } from './home';
 import { TopRatedComponent } from './section/top-rated';
 import { UpcomingComponent } from './section/upcoming';
@@ -23,5 +24,6 @@ export const APP_ROUTES: RouterConfig = [
 ];
 
 export const APP_ROUTER_PROVIDERS = [
-  provideRouter(APP_ROUTES)
+  provideRouter(APP_ROUTES),
+  provide(PLATFORM_DIRECTIVES, {'useValue': ROUTER_DIRECTIVES, multi: true})
 ];

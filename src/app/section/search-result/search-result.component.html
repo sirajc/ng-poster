@@ -1,3 +1,6 @@
-<p>
-  search-result works!
-</p>
+<div class="container search-results">
+  <div class="loading-message hidden"><img src="assets/images/hourglass.svg">
+    <h5 class="text-muted">Searching for "titanic"...</h5>
+  </div>
+  <pstr-movie-card-list [movies]="movies"></pstr-movie-card-list>
+</div>

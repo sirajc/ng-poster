@@ -1,4 +1,4 @@
-<div class="jumbotron ">
+<div class="jumbotron " *ngIf="(behavior | async)?.showJumbotron">
   <h2>Welcome to Poster!</h2>
   <p>
     A minimalist Movies catalog, powered by
