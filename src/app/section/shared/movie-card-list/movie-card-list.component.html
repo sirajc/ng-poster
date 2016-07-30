@@ -2,5 +2,5 @@
   <div class="movies-list">
     <pstr-movie-card *ngFor="let movie of movies" [movie]="movie"></pstr-movie-card>
   </div>
-  <h3 class="movies-list-empty text-muted" *ngIf="movies.length < 1">No movies found!</h3>
+  <h3 class="movies-list-empty text-muted" *ngIf="movies?.length < 1">No movies found!</h3>
 </div>

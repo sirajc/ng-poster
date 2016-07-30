@@ -14,7 +14,7 @@ import { JumbotronComponent } from './jumbotron.component';
 
 describe('Component: Jumbotron', () => {
   it('should create an instance', () => {
-    let component = new JumbotronComponent(null);
+    let component = new JumbotronComponent(null,null);
     expect(component).toBeTruthy();
   });
 });
