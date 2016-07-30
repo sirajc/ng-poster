@@ -17,7 +17,7 @@ export const APP_ROUTES: RouterConfig = [
       { path: 'upcoming', component: UpcomingComponent },
       { path: 'watchlist', component: WatchlistComponent },
       { path: 'search', component: SearchResultComponent },
-      { path: 'movie', component: MovieDetailComponent }
+      { path: 'movie/:id', component: MovieDetailComponent }
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }

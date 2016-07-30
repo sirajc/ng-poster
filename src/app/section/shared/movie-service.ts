@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Movie } from './movie-model';
+import { Movie, MovieDetail } from './movie-model';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -12,6 +12,11 @@ export class MovieService {
     return this.http.get(this.getEndPointUrl(type))
                 .map(response => response.json())
                 .map(response => <Movie[]>response.results)
+  }
+
+  getMovieDetail(movieId: number) {
+    return this.http.get(`${API_URL}/movie/info/${movieId}`)
+                      .map(response => <MovieDetail>response.json())
   }
 
   private getEndPointUrl(type: LoadMovieType): string {
