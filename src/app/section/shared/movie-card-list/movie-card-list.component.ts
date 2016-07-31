@@ -12,6 +12,7 @@ import { MovieCardComponent } from '../movie-card';
 export class MovieCardListComponent implements OnInit {
 
   @Input() movies: Movie[];
+  @Input() canRemoveFromWatchList: boolean = false;
   constructor() {}
 
   ngOnInit() {

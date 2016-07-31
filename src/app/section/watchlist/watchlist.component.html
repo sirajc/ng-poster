@@ -2,5 +2,5 @@
   <div *ngSwitchCase="true" class="loading-message"><img src="assets/images/hourglass.svg">
     <h5 class="text-muted">Loading your watchlist...</h5>
   </div>
-  <pstr-movie-card-list *ngSwitchCase="false"  [movies]="movies"></pstr-movie-card-list>
+  <pstr-movie-card-list canRemoveFromWatchList="true" *ngSwitchCase="false"  [movies]="movies"></pstr-movie-card-list>
 </div>

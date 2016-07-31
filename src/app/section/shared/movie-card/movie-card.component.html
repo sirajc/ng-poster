@@ -24,12 +24,11 @@
     </div>
     <hr/>
     <p class="overview">{{movie.overview}}</p>
-    <div class="card-actions"><span class="action-button hint--bottom hidden" aria-label="Add to watchlist"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></span>
-      <span class="action-button hint--bottom hidden" aria-label="Added to watchlist"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>
-      <span
-        class="action-button hint--bottom " aria-label="Remove from watchlist"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>
-        <a class="more-info" [routerLink]="['/movie', movie.id]"><span>Explore</span>
-        <em>❯</em></a>
+    <div class="card-actions">
+      <pstr-action-button [type]="action" [actionHint]="actionHint"></pstr-action-button>
+      <a class="more-info" [routerLink]="['/movie', movie.id]">
+        <span>Explore</span><em>❯</em>
+      </a>
     </div>
   </div>
 </div>

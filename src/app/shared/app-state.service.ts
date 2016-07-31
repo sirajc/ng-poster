@@ -30,7 +30,6 @@ export class AppStateService {
   }
 
   getAppState() {
-    this.appStateSubject.subscribe(x => console.log('State: ', x));
     return this.appStateSubject;
   }
 
