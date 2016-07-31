@@ -27,6 +27,16 @@ export class MovieService {
                       .map(response => <Movie[]>response.results)
   }
 
+  addToWatchList(movie: Movie) {
+    return this.http.put(`${API_URL}${END_POINTS.ADD_MOVIE_WATCHLIST}`, movie)
+                      .map(response => response.json());
+  }
+
+  removeFromWatchList(movieId: number) {
+    return this.http.delete(`${API_URL}${END_POINTS.REMOVE_MOVIE_WATCHLIST}/${movieId}`)
+                      .map(response => response.json());
+  }
+
   private getEndPointUrl(type: LoadMovieType): string {
     let endPointType = '';
     switch (type) {
@@ -45,7 +55,6 @@ export class MovieService {
 
 
 }
-
 
 export const enum LoadMovieType {
   TOP_RATED,

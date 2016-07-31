@@ -18,4 +18,7 @@ export class MovieCardListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onMovieRemoved(movieId : number) {
+    this.movies = this.movies.filter( movie => movie.id !== movieId);
+  }
 }

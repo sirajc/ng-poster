@@ -25,7 +25,7 @@
     <hr/>
     <p class="overview">{{movie.overview}}</p>
     <div class="card-actions">
-      <pstr-action-button [type]="action" [actionHint]="actionHint"></pstr-action-button>
+      <pstr-action-button [type]="action" [actionHint]="actionHint" (action)="onAction($event)"></pstr-action-button>
       <a class="more-info" [routerLink]="['/movie', movie.id]">
         <span>Explore</span><em>❯</em>
       </a>

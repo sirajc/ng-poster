@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Movie } from '../movie-model';
+import { MovieService } from '../movie-service';
 import { ActionButtonComponent } from '../action-button';
 
 @Component({
@@ -15,9 +16,10 @@ export class MovieCardComponent implements OnInit {
   noPosterImage = "assets/images/no_poster.png";
   action: string;
   actionHint: string;
+  @Output() movieRemoved: EventEmitter<number> = new EventEmitter<number>();
 
   @Input() movie: Movie;
-  constructor() {}
+  constructor(private movieService: MovieService) {}
 
   ngOnInit() {
     if(this.movie.watchlist === true) {
@@ -39,4 +41,27 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
+  onAction(actionType: string) {
+    switch (actionType) {
+      case 'add':
+        this.movieService.addToWatchList(this.movie)
+              .subscribe( () => {
+                this.action = 'added';
+                this.actionHint = 'Added to watchlist';
+              }, error, complete);
+        break;
+      case 'remove':
+        this.movieService.removeFromWatchList(this.movie.id)
+              .subscribe( response => {
+                if(response.moviesRemoved === 1) {
+                  this.movieRemoved.emit(this.movie.id);
+                }
+              }, error, complete);
+        break;
+    }
+  }
+
 }
+
+const complete = () => { console.log('Obeservable complete')};
+const error = (error) => console.log('Error fetching movies', error);

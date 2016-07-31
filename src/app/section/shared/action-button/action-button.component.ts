@@ -9,6 +9,7 @@ export class ActionButtonComponent implements OnInit {
 
   @Input() type: string = 'added';
   @Input() actionHint: string;
+  @Output() action: EventEmitter<string> = new EventEmitter<string>();
   glyphMap = {
     add: 'plus',
     remove: 'remove',
@@ -23,6 +24,10 @@ export class ActionButtonComponent implements OnInit {
 
   getGlyphClass() {
     return `glyphicon glyphicon-${this.glyphMap[this.type]}`
+  }
+
+  onActionClick() {
+    this.action.emit(this.type);
   }
 
 }

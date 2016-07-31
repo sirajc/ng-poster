@@ -1,6 +1,7 @@
 <div class="movies-list-container">
   <div class="movies-list">
-    <pstr-movie-card [canRemoveFromWatchList]="canRemoveFromWatchList" *ngFor="let movie of movies" [movie]="movie"></pstr-movie-card>
+    <pstr-movie-card [canRemoveFromWatchList]="canRemoveFromWatchList" *ngFor="let movie of movies"
+      [movie]="movie" (movieRemoved)="onMovieRemoved($event)"></pstr-movie-card>
   </div>
   <h3 class="movies-list-empty text-muted" *ngIf="movies?.length < 1">No movies found!</h3>
 </div>
