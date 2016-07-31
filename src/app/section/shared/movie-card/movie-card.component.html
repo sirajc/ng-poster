@@ -13,14 +13,12 @@
   </div>
   <div class="movie-meta">
     <a [routerLink]="['/movie', movie.id]" class="title">
-    <!--<h4 class={ "title-text " + (titleLength> 33 ? "hint--bottom" : "")} aria-label={movie.title} > {truncatedTitle}
-    </h4>-->
-    <h4 class="title-text" [attr.aria-label]="movie.title"> {{movie.original_title}}
+    <h4 class="title-text" [ngClass]="{'hint--bottom': titleLength > 33}" [attr.aria-label]="movie.title">
+      {{truncatedTitle}}
     </h4>
     </a>
     <div class="release-date text-muted">
-      <!--TODO Date string-->
-      <span class="glyphicon glyphicon-calendar"></span> {{movie.release_date}}
+      <span class="glyphicon glyphicon-calendar"></span> {{releaseDate | date}}
     </div>
     <hr/>
     <p class="overview">{{movie.overview}}</p>

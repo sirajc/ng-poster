@@ -12,32 +12,24 @@ import { ActionButtonComponent } from '../action-button';
 })
 export class MovieCardComponent implements OnInit {
 
+  @Input() movie: Movie;
   @Input() canRemoveFromWatchList: boolean = false;
-  noPosterImage = "assets/images/no_poster.png";
-  action: string;
-  actionHint: string;
+
   @Output() movieRemoved: EventEmitter<number> = new EventEmitter<number>();
 
-  @Input() movie: Movie;
-  constructor(private movieService: MovieService) {}
+  private noPosterImage = "assets/images/no_poster.png";
+  private action: string;
+  private releaseDate: Date;
+
+  constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    if(this.movie.watchlist === true) {
+    this.releaseDate = new Date(this.movie.release_date);
+
+    if (this.movie.watchlist === true) {
       this.action = this.canRemoveFromWatchList ? 'remove' : 'added';
     } else {
       this.action = 'add';
-    }
-
-    switch (this.action) {
-      case 'add':
-        this.actionHint = 'Add to watchlist'
-        break;
-      case 'remove':
-        this.actionHint = 'Remove from watchlist'
-        break;
-      case 'added':
-        this.actionHint = 'Added to watchlist'
-        break;
     }
   }
 
@@ -45,23 +37,41 @@ export class MovieCardComponent implements OnInit {
     switch (actionType) {
       case 'add':
         this.movieService.addToWatchList(this.movie)
-              .subscribe( () => {
-                this.action = 'added';
-                this.actionHint = 'Added to watchlist';
-              }, error, complete);
+          .subscribe(() => {
+            this.action = 'added';
+          }, error, complete);
         break;
       case 'remove':
         this.movieService.removeFromWatchList(this.movie.id)
-              .subscribe( response => {
-                if(response.moviesRemoved === 1) {
-                  this.movieRemoved.emit(this.movie.id);
-                }
-              }, error, complete);
+          .subscribe(response => {
+            if (response.moviesRemoved === 1) {
+              this.movieRemoved.emit(this.movie.id);
+            }
+          }, error, complete);
         break;
     }
   }
 
+  public get actionHint() {
+    switch (this.action) {
+      case 'add':
+        return 'Add to watchlist'
+      case 'remove':
+        return 'Remove from watchlist'
+      case 'added':
+        return 'Added to watchlist'
+    }
+  }
+
+  public get titleLength(): number {
+    return this.movie.title.length;
+  }
+
+  public get truncatedTitle(): string {
+    return (this.titleLength > 33) ? this.movie.title.substr(0, 28) + '...' : this.movie.title;
+  }
+
 }
 
-const complete = () => { console.log('Obeservable complete')};
+const complete = () => { console.log('Obeservable complete') };
 const error = (error) => console.log('Error fetching movies', error);
