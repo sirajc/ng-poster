@@ -1,3 +1,8 @@
-<p>
-  search-box works!
-</p>
+<div class="input-group">
+  <input (keyup.enter)="onSearch(searchBox.value)" #searchBox type="text"
+    placeholder="Search for a movie..." class="form-control" value="">
+  <span class="input-group-btn">
+    <button class="btn btn-default glyphicon glyphicon-search" type="button"
+      (click)="onSearch(searchBox.value)" ></button>
+  </span>
+</div>

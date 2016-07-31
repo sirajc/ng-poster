@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -8,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBoxComponent implements OnInit {
 
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() {}
 
   ngOnInit() {
+  }
+
+  onSearch(searchText: string) {
+    if(searchText.length > 0) {
+      this.search.emit(searchText);
+    }
   }
 
 }
