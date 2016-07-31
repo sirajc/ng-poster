@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptionsArgs, URLSearchParams } from '@angular/http';
 import { Movie, MovieDetail } from './movie-model';
 import { Observable } from 'rxjs/Observable';
 
@@ -10,13 +10,21 @@ export class MovieService {
 
   loadMovies(type: LoadMovieType) {
     return this.http.get(this.getEndPointUrl(type))
-                .map(response => response.json())
-                .map(response => <Movie[]>response.results)
+                      .map(response => response.json())
+                      .map(response => <Movie[]>response.results)
   }
 
   getMovieDetail(movieId: number) {
     return this.http.get(`${API_URL}/movie/info/${movieId}`)
                       .map(response => <MovieDetail>response.json())
+  }
+
+  searchMovies(searchText: string) {
+    let options: RequestOptionsArgs = {};
+    options.search = `query=${searchText}`;
+    return this.http.get(`${API_URL}${END_POINTS.SEARCH}`, options)
+                      .map(response => response.json())
+                      .map(response => <Movie[]>response.results)
   }
 
   private getEndPointUrl(type: LoadMovieType): string {

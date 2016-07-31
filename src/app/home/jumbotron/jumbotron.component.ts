@@ -17,7 +17,7 @@ export class JumbotronComponent implements OnInit {
   }
 
   search(searchText) {
-    this.rotuer.navigate(['/search'], { queryParams: { query: searchText } })
+    this.rotuer.navigate(['/search'], { queryParams: { movie: searchText } })
   }
 
 }
