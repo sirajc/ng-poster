@@ -435,20 +435,17 @@
     }
 }
 
-.poster-modal {
-    margin: 5% auto 0 auto;
-    outline: none;
-    background: #FFF;
-    width: 396px;
-
-    .close-modal {
-        position: absolute;
-        right: 0;
-        top: 50px;
-        font-size: 4em;
-        line-height: 60px;
-        cursor: pointer;
+.modal-backdrop {
+    background-color: #fff;
+    .in {
+        opacity: 0.75;
     }
+}
+.poster-dialog {
+  .modal-content {
+    background-color: initial;
+    box-shadow: initial;
+  }
 }
 
 .action-button {

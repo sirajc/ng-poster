@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Modal } from 'angular2-modal/plugins/bootstrap';
 
 import { AppStateService } from '../../shared';
 import { MovieDetail, MovieService } from '../shared';
+import { FullPosterComponent, FullPosterData } from '../shared/full-poster';
 
 @Component({
   selector: 'pstr-movie-detail',
@@ -22,7 +24,11 @@ export class MovieDetailComponent implements OnInit {
   movie: MovieDetail;
   releaseDate: Date;
 
-  constructor(private state: AppStateService, private movieService: MovieService, private route: ActivatedRoute) {}
+  constructor(private state: AppStateService,
+                private movieService: MovieService,
+                private route: ActivatedRoute,
+                private modal: Modal) {
+  }
 
   ngOnInit() {
     this.state.setFalse();
@@ -44,6 +50,10 @@ export class MovieDetailComponent implements OnInit {
   ngOnDestroy() {
     this.state.setTrue();
     this.sub.unsubscribe();
+  }
+
+  openModal() {
+    this.modal.open(FullPosterComponent, new FullPosterData(this.movie.poster_path.medium));
   }
 
 }

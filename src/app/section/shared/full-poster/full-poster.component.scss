@@ -1,0 +1,14 @@
+.poster-modal {
+    margin: 5% auto 0 auto;
+    outline: none;
+    width: 396px;
+
+    .close-modal {
+        position: absolute;
+        right: 0;
+        font-size: 4em;
+        line-height: 60px;
+        cursor: pointer;
+    }
+}
+

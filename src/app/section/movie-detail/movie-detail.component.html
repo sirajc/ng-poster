@@ -4,8 +4,7 @@
   </div>
   <div class="row" *ngSwitchCase="false">
     <div class="col-md-3 sidebar">
-      <!--<div class="movie-poster" onClick={this.handleClickPoster.bind(this)}>-->
-      <div class="movie-poster">
+      <div class="movie-poster" (click)="openModal()" >
         <img [src]="movie.poster_path.small || noPosterImage"/>
         <span class="glyphicon glyphicon-zoom-in" *ngIf="movie.poster_path.medium"></span>
       </div>
@@ -115,6 +114,13 @@
         </p>
       </div>
     </div>
-    <!--{this.renderPosterModal()}-->
+    <!--<Modal
+        isOpen={this.state.openModal}
+        shouldCloseOnOverlayClick={true}
+        onRequestClose={this.handleClickCloseModal.bind(this)}
+        class="poster-modal">
+        <span class="close-modal" onClick={this.handleClickCloseModal.bind(this)}>&times;</span>
+        <img src={movie.poster_path.medium} />
+    </Modal>-->
   </div>
 </section>
