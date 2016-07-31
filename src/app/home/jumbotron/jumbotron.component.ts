@@ -9,15 +9,15 @@ import { AppStateService,  AppStateSubject } from '../../shared';
 })
 export class JumbotronComponent implements OnInit {
 
-  behavior: AppStateSubject;
-  constructor(private rotuer: Router, private state: AppStateService) {}
+  state: AppStateSubject;
+  constructor(private rotuer: Router, private stateService: AppStateService) {}
 
   ngOnInit() {
-    this.behavior = this.state.getAppState();
+    this.state = this.stateService.getAppState();
   }
 
-  search(searchText) {
-    this.rotuer.navigate(['/search'], { queryParams: { movie: searchText } })
+  search(searchText: string) {
+    if(searchText.length > 0)
+      this.rotuer.navigate(['/search'], { queryParams: { movie: searchText } })
   }
-
 }

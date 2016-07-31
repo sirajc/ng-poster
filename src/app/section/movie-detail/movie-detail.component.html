@@ -95,7 +95,7 @@
           <div class="cast-member" *ngFor="let person of credits.actors">
             <div class="cast-person">
                 <span class="person-photo">
-                    <img [src]="person.profile_path.smaller || this.noProfileImage"/>
+                    <img [src]="person.profile_path.smaller || noProfileImage"/>
                 </span>
                 <span class="person-title">
                     <a [href]="personPermaLink+person.id" class="person-name" target="_blank">{{person.name}}</a>
