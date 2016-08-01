@@ -1,6 +1,4 @@
 <div class="container top-rated-section" [ngSwitch]="loading">
-  <div *ngSwitchCase="true" class="loading-message"><img src="assets/images/hourglass.svg">
-    <h5 class="text-muted">Loading top rated movies...</h5>
-  </div>
+  <pstr-loading-indicator *ngSwitchCase="true" message="Loading top rated movies"></pstr-loading-indicator>
   <pstr-movie-card-list *ngSwitchCase="false"  [movies]="movies"></pstr-movie-card-list>
 </div>

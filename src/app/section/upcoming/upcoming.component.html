@@ -1,6 +1,4 @@
 <div class="container upcoming-section" [ngSwitch]="loading">
-  <div *ngSwitchCase="true" class="loading-message"><img src="assets/images/hourglass.svg">
-    <h5 class="text-muted">Loading upcoming movies...</h5>
-  </div>
+  <pstr-loading-indicator *ngSwitchCase="true" message="Loading upcoming movies"></pstr-loading-indicator>
   <pstr-movie-card-list *ngSwitchCase="false"  [movies]="movies"></pstr-movie-card-list>
 </div>

@@ -1,7 +1,5 @@
 <section class="container poster-section movie-details-section" [ngSwitch]="loading">
-  <div *ngSwitchCase="true" class="loading-message"><img src="assets/images/hourglass.svg">
-    <h5 class="text-muted">Loading movie details...</h5>
-  </div>
+  <pstr-loading-indicator *ngSwitchCase="true" message="Loading movie details"></pstr-loading-indicator>
   <div class="row" *ngSwitchCase="false">
     <div class="col-md-3 sidebar">
       <div class="movie-poster" (click)="openModal()" >

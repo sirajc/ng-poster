@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MovieCardListComponent } from '../shared/movie-card-list';
 import { Movie, MovieService } from '../shared';
+import { LoadingIndicatorComponent } from '../../shared/loading-indicator';
 
 @Component({
   moduleId: module.id,
   selector: 'pstr-search-result',
   templateUrl: 'search-result.component.html',
   styleUrls: ['search-result.component.scss'],
-  directives: [ MovieCardListComponent ]
+  directives: [ MovieCardListComponent, LoadingIndicatorComponent ]
 })
 export class SearchResultComponent implements OnInit {
 

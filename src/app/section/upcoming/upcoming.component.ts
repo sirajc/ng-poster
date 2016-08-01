@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieCardListComponent } from '../shared/movie-card-list';
 import { LoadMovieType, Movie, MovieService } from '../shared';
+import { LoadingIndicatorComponent } from '../../shared/loading-indicator';
 
 @Component({
   moduleId: module.id,
   selector: 'pstr-upcoming',
   templateUrl: 'upcoming.component.html',
   styleUrls: ['upcoming.component.scss'],
-  directives: [ MovieCardListComponent ]
+  directives: [ MovieCardListComponent, LoadingIndicatorComponent ]
 })
 export class UpcomingComponent implements OnInit {
 

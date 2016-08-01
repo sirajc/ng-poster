@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieCardListComponent } from '../shared/movie-card-list';
 import { LoadMovieType, Movie, MovieService } from '../shared';
+import { LoadingIndicatorComponent } from '../../shared/loading-indicator';
 
 @Component({
   moduleId: module.id,
   selector: 'pstr-top-rated',
   templateUrl: 'top-rated.component.html',
   styleUrls: ['top-rated.component.scss'],
-  directives: [ MovieCardListComponent ]
+  directives: [ MovieCardListComponent, LoadingIndicatorComponent ]
 })
 export class TopRatedComponent implements OnInit {
 

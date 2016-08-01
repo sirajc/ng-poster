@@ -5,11 +5,13 @@ import { Modal } from 'angular2-modal/plugins/bootstrap';
 import { AppStateService } from '../../shared';
 import { MovieDetail, MovieService } from '../shared';
 import { FullPosterComponent, FullPosterData } from '../shared/full-poster';
+import { LoadingIndicatorComponent } from '../../shared/loading-indicator';
 
 @Component({
   selector: 'pstr-movie-detail',
   templateUrl: 'movie-detail.component.html',
-  styleUrls: ['movie-detail.component.scss']
+  styleUrls: ['movie-detail.component.scss'],
+  directives: [ LoadingIndicatorComponent ]
 })
 export class MovieDetailComponent implements OnInit {
 

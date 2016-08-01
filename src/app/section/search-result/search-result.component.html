@@ -1,6 +1,4 @@
 <div class="container search-results" [ngSwitch]="loading">
-  <div *ngSwitchCase="true" class="loading-message"><img src="assets/images/hourglass.svg">
-    <h5 class="text-muted">Searching for "{{searchText}}"...</h5>
-  </div>
+  <pstr-loading-indicator *ngSwitchCase="true" [message]="'Searching for '+searchText"></pstr-loading-indicator>
   <pstr-movie-card-list *ngSwitchCase="false" [movies]="movies"></pstr-movie-card-list>
 </div>
