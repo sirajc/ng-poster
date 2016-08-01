@@ -1,0 +1,23 @@
+.action-button {
+    cursor: pointer;
+
+    .glyphicon {
+        font-size: 20px;
+        line-height: 20px;
+        color: #999;
+        transition: color .2s;
+
+        &:hover {
+            cursor: pointer;
+            color: #444;
+        }
+    }
+
+    .glyphicon-remove {
+        color: #F44336;
+    }
+
+    .glyphicon-ok {
+        color: #8BC34A;
+    }
+}

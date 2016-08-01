@@ -1,0 +1,181 @@
+@mixin clearfix {
+    &:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
+
+.movie-item {
+    margin: 20px 5px 0 5px;
+    width: 45%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+
+    &:nth-child(n+3) {
+        margin-top: 80px;
+    }
+
+    .movie-banner {
+        position: relative;
+        height: 280px;
+
+        .movie-backdrop {
+            overflow: hidden;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+
+            img {
+                height: 100%;
+                width: 100%;
+                -webkit-filter: blur(2px);
+                        filter: blur(2px);
+            }
+        }
+
+        .rating,
+        .movie-poster {
+            position: absolute;
+        }
+
+        .rating {
+            top: 0;
+            right: 15px;
+            height: 60px;
+            width: 40px;
+            background: #FBC02D;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            border: 2px dashed #F57F17;
+            border-top-width: 0;
+            box-shadow: 0 0 7px #FFF9C4;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            .glyphicon,
+            .rate-value {
+                display: block;
+                margin-top: 3px;
+                color: #FFF;
+                text-shadow: -1px -1px 0 #F57F17;
+            }
+
+            .glyphicon {
+                font-size: 22px;
+            }
+
+            .rate-value {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+
+        .movie-poster {
+            top: 30px;
+            left: 30px;
+            width: 150px;
+            height: 220px;
+            border: 3px solid #FFFFFF;
+            transition: box-shadow .2s;
+
+            &:hover {
+                box-shadow: 0 0 10px #fff;
+            }
+        }
+    }
+
+    .movie-meta {
+        padding: 15px;
+
+        hr {
+            margin: 12px auto 12px auto;
+        }
+
+        .title {
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            .title-text {
+                display: inline-block;
+                margin: 0;
+                transition: color .2s;
+
+                &:hover {
+                    color: #999;
+                }
+            }
+        }
+
+        .release-date {
+
+            .glyphicon {
+                margin-right: 5px;
+            }
+        }
+
+        .overview {
+            display: -webkit-box;
+            height: 70px;
+            overflow: hidden;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .card-actions {
+            @include clearfix;
+
+            .more-info {
+                line-height: 20px;
+            }
+
+            .more-info {
+                font-size: 20px;
+                transition: color .2s;
+            }
+
+            .action-button {
+                float: left;
+            }
+
+            .more-info {
+                float: right;
+                text-decoration: none;
+                color: #77b3d4;
+
+                @include clearfix;
+
+                &:hover {
+                    color: lighten(#77b3d4, 10%);
+                }
+
+                span {
+                    float: left;
+                    margin-top: 1px;
+                    margin-right: 5px;
+                }
+
+                em {
+                    float: right;
+                    font-style: normal;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    &:nth-child(odd) {
+        float: left;
+        clear: right;
+    }
+
+    &:nth-child(even) {
+        float: right;
+    }
+}
