@@ -14,7 +14,7 @@ import { TopRatedComponent } from './top-rated.component';
 
 describe('Component: TopRated', () => {
   it('should create an instance', () => {
-    let component = new TopRatedComponent();
+    let component = new TopRatedComponent(null);
     expect(component).toBeTruthy();
   });
 });

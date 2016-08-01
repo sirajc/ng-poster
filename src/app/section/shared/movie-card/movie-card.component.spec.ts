@@ -14,7 +14,7 @@ import { MovieCardComponent } from './movie-card.component';
 
 describe('Component: MovieCard', () => {
   it('should create an instance', () => {
-    let component = new MovieCardComponent();
+    let component = new MovieCardComponent(null);
     expect(component).toBeTruthy();
   });
 });

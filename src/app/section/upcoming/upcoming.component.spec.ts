@@ -14,7 +14,7 @@ import { UpcomingComponent } from './upcoming.component';
 
 describe('Component: Upcoming', () => {
   it('should create an instance', () => {
-    let component = new UpcomingComponent();
+    let component = new UpcomingComponent(null);
     expect(component).toBeTruthy();
   });
 });

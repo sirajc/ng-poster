@@ -14,7 +14,7 @@ import { MovieDetailComponent } from './movie-detail.component';
 
 describe('Component: MovieDetail', () => {
   it('should create an instance', () => {
-    let component = new MovieDetailComponent();
+    let component = new MovieDetailComponent(null, null, null, null);
     expect(component).toBeTruthy();
   });
 });

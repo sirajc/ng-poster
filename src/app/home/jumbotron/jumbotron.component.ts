@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppStateService,  AppStateSubject } from '../../shared';
-import { SearchBoxComponent } from '../../section/shared/search-box';
+import { SearchBoxComponent } from './shared/search-box';
 
 @Component({
   selector: 'pstr-jumbotron',
@@ -19,7 +19,8 @@ export class JumbotronComponent implements OnInit {
   }
 
   search(searchText: string) {
-    if(searchText.length > 0)
+    if(searchText.length > 0) {
       this.rotuer.navigate(['/search'], { queryParams: { movie: searchText } })
+    }
   }
 }

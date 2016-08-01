@@ -14,7 +14,7 @@ import { SearchResultComponent } from './search-result.component';
 
 describe('Component: SearchResult', () => {
   it('should create an instance', () => {
-    let component = new SearchResultComponent();
+    let component = new SearchResultComponent(null, null);
     expect(component).toBeTruthy();
   });
 });

@@ -14,7 +14,7 @@ import { WatchlistComponent } from './watchlist.component';
 
 describe('Component: Watchlist', () => {
   it('should create an instance', () => {
-    let component = new WatchlistComponent();
+    let component = new WatchlistComponent(null);
     expect(component).toBeTruthy();
   });
 });

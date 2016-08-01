@@ -24,7 +24,8 @@ export class MovieCardComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit() {
-    this.releaseDate = new Date(this.movie.release_date);
+    if(this.movie.release_date !== '')
+      this.releaseDate = new Date(this.movie.release_date);
 
     if (this.movie.watchlist === true) {
       this.action = this.canRemoveFromWatchList ? 'remove' : 'added';
