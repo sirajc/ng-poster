@@ -1,31 +1,45 @@
-# NgCliWebpack
+# NgPoster
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.10.
+An [Angular 2](https://angular.io/) webapp to list movies and maintain watchlist, powered by [TMDB](https://www.themoviedb.org) using angular-cli and [Angular styleguide](https://angular.io/styleguide)
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> This app is based on poster webapp by @kushalpandya. HTML Markup, SCSS and layout is picked as is from [poster](https://github.com/kushalpandya/poster). Both the apps looks and behaves the same, only the code is different. poster is built with react and ng-poster is built with Angular 2
 
-## Code scaffolding
+#### Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+##### Pre-Req Angular CLI
+This app uses webpack build system of [Angular CLI](http://cli.angular.io), Globally install version `1.0.0-beta.11-webpack` or above if available.
 
-## Build
+_OR_
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Use CLI from master branch directly
+```
+git clone https://github.com/angular/angular-cli.git
+cd angular-cli
+npm link
+```
 
-## Running unit tests
+##### Pre-Req Poster Server
+Setup the [poster-server](https://github.com/kushalpandya/poster-server). Instructions available at https://github.com/kushalpandya/poster-server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##### Setup ng-poster
+Download tarball and extract _OR_ clone using `git clone https://github.com/sirajc/ng-poster`
+Install Dependencies (_Note this will take time due to huge no of dependencies for CLI_)
+```
+cd ng-poster
+npm install
+```
 
-## Running end-to-end tests
+If you are using local version of CLI (i.e. master branch) then run `npm link angular-cli` from `ng-poster/` path
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
+##### Run the App
+You can run the app using `ng serve` or `npm start`
 
-## Deploying to Github Pages
+##### Configuration options
+NgPoster will run on port 4200 & Poster Server will run on port 9000.
+If you change Poster Server port (from its configuration.json), you need to also change the same in NgPoster's `src/app/section/shared/movie-service.ts` file for value of constant variable API_URL.
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+#### TODO
 
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[ ] App Structure explanation
+[ ] Documentation
+[ ] Tests
