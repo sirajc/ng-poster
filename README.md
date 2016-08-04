@@ -6,39 +6,20 @@ An [Angular 2](https://angular.io/) webapp to list movies and maintain watchlist
 
 #### Installation
 
-##### Pre-Req Angular CLI
-This app uses webpack build system of [Angular CLI](http://cli.angular.io), Globally install version `1.0.0-beta.11-webpack` or above if available.
-
-_OR_
-
-Use CLI from master branch directly
-```
-git clone https://github.com/angular/angular-cli.git
-cd angular-cli
-npm link
-```
+##### Pre-Req Node v5 and above, npm v3 and above
+Install node v5+ and which comes with npm v3+
 
 ##### Pre-Req Poster Server
 Setup the [poster-server](https://github.com/kushalpandya/poster-server). Instructions available at https://github.com/kushalpandya/poster-server
 
 ##### Setup ng-poster
-Download tarball and extract _OR_ clone using `git clone https://github.com/sirajc/ng-poster`
-Install Dependencies (_Note this will take time due to huge no of dependencies for CLI_)
-```
-cd ng-poster
-npm install
-```
+`npm install`
 
-If you are using local version of CLI (i.e. master branch) then run `npm link angular-cli` from `ng-poster/` path
+#### Run
+`npm start`
 
-##### Run the App
-You can run the app using `ng serve` or `npm start`
-
-##### Configuration options
-NgPoster will run on port 4200 & Poster Server will run on port 9000.
-If you change Poster Server port (from its configuration.json), you need to also change the same in NgPoster's `src/app/section/shared/movie-service.ts` file for value of constant variable API_URL.
-
-#### TODO
+#### AngularClass
+This project is using webpack starter repository from @AngularClass -> https://github.com/AngularClass/angular2-webpack-starter
 
 [ ] App Structure explanation
 [ ] Documentation

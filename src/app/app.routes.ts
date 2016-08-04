@@ -7,7 +7,7 @@ import { WatchlistComponent } from './section/watchlist';
 import { SearchResultComponent } from './section/search-result';
 import { MovieDetailComponent } from './section/movie-detail';
 
-export const APP_ROUTES: RouterConfig = [
+export const routes: RouterConfig = [
   {
     path: '',
     component: HomeComponent,
@@ -23,7 +23,7 @@ export const APP_ROUTES: RouterConfig = [
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(APP_ROUTES),
-  provide(PLATFORM_DIRECTIVES, {'useValue': ROUTER_DIRECTIVES, multi: true})
-];
+// export const APP_ROUTER_PROVIDERS = [
+//   provideRouter(APP_ROUTES),
+//   provide(PLATFORM_DIRECTIVES, {'useValue': ROUTER_DIRECTIVES, multi: true})
+// ];
